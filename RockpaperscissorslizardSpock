@@ -1,0 +1,117 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "collapsed_sections": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "3E-zbQbkqipt"
+      },
+      "outputs": [],
+      "source": [
+        "#Final Project: Rock, Paper, Scissors, Lizard, Spock\n",
+        "\n",
+        "from random import randint\n",
+        "t = ['rock', 'paper', 'scissors', 'lizard', 'Spock']\n",
+        "\n",
+        "class bcolors:\n",
+        "    WIN = '\\033[92m' #GREEN\n",
+        "    TIE = '\\033[93m' #YELLOW\n",
+        "    LOSE = '\\033[91m' #RED\n",
+        "    RESET = '\\033[0m' #RESET COLOR\n",
+        "\n",
+        "computer =  t[randint(0,4)]\n",
+        "\n",
+        "player = False\n",
+        "\n",
+        "while player == False:\n",
+        "  player = input(\"rock, paper, scissors, lizard, Spock?\")\n",
+        "  \n",
+        "  if player == computer:\n",
+        "    print(f\"{bcolors.TIE}Tie! Maybe you are a worthy opponent, afterall.{bcolors.RESET}\")\n",
+        "  \n",
+        "  elif player == \"rock\":\n",
+        "    if computer == \"paper\":\n",
+        "      print(f\"{bcolors.LOSE}You lose!\", computer, \"covers\", player,\"and rock is never to be seen again...{bcolors.RESET}\")\n",
+        "    elif computer == \"scissors\":\n",
+        "      print(f\"{bcolors.WIN}You win!\", player, \"smashes\", computer,\"into tiny pieces--caveman style!{bcolors.RESET}\")\n",
+        "    elif computer == \"lizard\":\n",
+        "      print(f\"{bcolors.WIN}You win!\",player, \"crushes\", computer,\"Yikes! Why did you have to be so brutal?{bcolors.RESET}\")\n",
+        "    elif computer == \"Spock\":\n",
+        "      print(f\"{bcolors.LOSE}You loose\", computer, \"vaporizes\", player, \"Did you really think you stood a chance?{bcolors.RESET}\")\n",
+        "  \n",
+        "  elif player == \"paper\":\n",
+        "    if computer == \"rock\":\n",
+        "      print(f\"{bcolors.WIN}You win!\", player, \"covers\", computer, \"and rock is never to be seen again... {bcolors.RESET}\")\n",
+        "    elif computer == \"scissors\":\n",
+        "      print(f\"{bcolors.LOSE}You lose!\", computer, \"cuts\", player,\"Paper could never stand up against scissors! {bcolors.RESET}\")\n",
+        "    elif computer == \"lizard\":\n",
+        "      print(f\"{bcolors.LOSE}You lose!\", computer, \"eats\", player, \"I wouldn't have thought paper would be tasty but, clearly, our lizard friend disagrees {bcolors.RESET}\")\n",
+        "    elif computer == \"Spock\":\n",
+        "      print(f\"{bcolors.WIN}You win!\", player, \"disproves\", computer, \"The pen (or paper, in this case) is mightier than the sword (or telepathy, apparently). {bcolors.RESET}\")\n",
+        "  \n",
+        "  elif player == \"scissors\":\n",
+        "    if computer == \"rock\":\n",
+        "      print(f\"{bcolors.LOSE}You lose!\", computer, \"smashes\", player, \"into tiny pieces--caveman style! {bcolors.RESET}\")\n",
+        "    elif computer == \"paper\":\n",
+        "      print(f\"{bcolors.WIN}You win!\", player, \"cuts\", computer, \"Paper could never stand up against scissors! {bcolors.RESET}\")\n",
+        "    elif computer == \"lizard\":\n",
+        "      print(f\"{bcolors.WIN}You win!\", player, \"decapitates\", computer, \"OUCH! That had to hurt...at least you won? {bcolors.RESET}\")\n",
+        "    elif computer == \"Spock\":\n",
+        "      print(f\"{bcolors.LOSE}You lose!\", computer, \"smashes\", player, \"He must be having a bad day. So aggressive! {bcolors.RESET}\")\n",
+        "  \n",
+        "  elif player == \"lizard\":\n",
+        "    if computer == \"rock\":\n",
+        "      print(f\"{bcolors.LOSE}You lose!\", computer, \"crushes\", player, \"Whoa...that got dark {bcolors.RESET}\")\n",
+        "    elif computer == \"paper\":\n",
+        "      print(f\"{bcolors.WIN}You win!\", player, \"eats\", computer, \"all in one, big bite! Buuuuuurrrrrppppp! {bcolors.RESET}\")\n",
+        "    elif computer == \"scissors\":\n",
+        "      print (f\"{bcolors.LOSE}You lose!\", computer, \"decapitates\", player, \"...That was kinda psycho... maybe you should stop picking lizard? {bcolors.RESET}\")\n",
+        "    elif computer == \"Spock\":\n",
+        "      print(f\"{bcolors.WIN}You win!\", player, \"poisons\", computer, \"How could you? He was an intergalactic hero!{bcolors.RESET}\")\n",
+        "  \n",
+        "  elif player == \"Spock\":\n",
+        "    if computer == \"rock\":\n",
+        "      print(f\"{bcolors.WIN}You win!\", player, \"vaporizes\", computer, \"Boulders to plasma, sick. MIT beat you to it, though, js. {bcolors.RESET}\")\n",
+        "    elif computer == \"paper\":\n",
+        "      print(f\"{bcolors.LOSE}You lose!\", computer, \"disproves\", player, \"You thought Spock would always win? HA! {bcolors.RESET}\")\n",
+        "    elif computer == \"scissors\":\n",
+        "      print(f\"{bcolors.WIN}You win!\", player, \"smashes\", computer, \"I guess you won, this time... {bcolors.RESET}\")\n",
+        "    elif computer == \"lizard\":\n",
+        "      print(f\"{bcolors.LOSE}You lose!\", computer, \"poisons\", player, \"If we teach aliens about wildlife, they will be touched. If we introduce them to wildlife, they will be poisoned. {bcolors.RESET}\")\n",
+        "\n",
+        "  else:\n",
+        "    print(f\"{bcolors.LOSE}That is not a valid play. This is rock, paper, scissors, lizard, Spock! What are YOU playing? {bcolors.RESET}\")\n",
+        "  player = False\n",
+        "  computer = t[randint(0,4)]\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "9JohwbJc0foS"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
